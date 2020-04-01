@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Vanilla JavaScript Config Library</title>
+    </head>
+    <body>
+        <div>
+            <h2>OS Configuration</h2>
+            <h4>Your host : <span id="operatingSystem"></span></h4>
+            <div id="isOperatingSystem"></div>
+            <br />
+            <h2>Browser Configuration</h2>
+            <h4>Your browser: <span id="browser"></span></h4>
+            <div id="isBrowser"></div>
+            <br />
+            <h2>Device Configuration</h2>
+            <h4>Your browser has cookies enabled : <span id="isCookieEnabled"></span></h4>
+            <div>You are connected to internet : <span id="isOnLine"></span></div>
+            <div>Your known languages are : <span id="knownLangs"></span></div>
+            <div>Your preferred language is : <span id="prefLang"></span></div>
+            <div>You have Java Enabled : <span id="isJavaEnabled"></span></div>
+          </div>
+
+          <script src="../VanillaJavaScriptConfig.js"></script>
+          <script>
+              // Usage 
+              const [os,isWin,isMac,isUnix,isLinux,isWinMob,isAndroid,isiOS] = checkOS();
+              const [browser,isChrome,isFirefox,isIE,isEdge,isSafari,isOpera,isYandex] = checkBrowser();
+              const [deviceConfig,isCookieEnabled,isOnLine,knownLangs,prefLang,isJavaEnabled] = checkDeviceConfig();
+
+              // OS Configuration 
+              document.querySelector('#operatingSystem').innerHTML = os;
+              const isOperatingSystem = document.querySelector('#isOperatingSystem');
+              if(isWin)  isOperatingSystem.innerText = "This is Windows OS";
+              if(isMac)  isOperatingSystem.innerText = "This is Mac OS";
+              if(isUnix) isOperatingSystem.innerText = "This is Unix-based OS";
+              if(isLinux) isOperatingSystem.innerText = "This is Linux OS";
+              if(isWinMob) isOperatingSystem.innerText = "This is Windows Mobile OS";
+              if(isAndroid) isOperatingSystem.innerText = "This is Android OS";
+              if(isiOS) isOperatingSystem.innerText = "This is iOS";
+
+              // Browser Configuration
+              document.querySelector('#browser').innerHTML = browser;
+              const isBrowser = document.querySelector('#isBrowser');
+              if(isChrome) isBrowser.innerText = "This is Google Chrome";
+              if(isFirefox) isBrowser.innerText = "This is Firefox";
+              if(isIE) isBrowser.innerText = "This is IE";
+              if(isEdge) isBrowser.innerText = "This is Edge";
+              if(isSafari) isBrowser.innerText = "This is Safari";
+              if(isOpera)isBrowser.innerText = "This is Opera";
+              if(isYandex) isBrowser.innerText = "This is Yandex";
+
+              // Device Configuration 
+              if(isCookieEnabled) document.querySelector('#isCookieEnabled').innerText = "true";
+              else document.querySelector('#isCookieEnabled').innerText = "false";      
+              if(isOnLine) document.querySelector('#isOnLine').innerText = "true"; 
+              else document.querySelector('#isOnLine').innerText = "false"; 
+              if(knownLangs!=="unknown") document.querySelector('#knownLangs').innerHTML = knownLangs.map((v,i)=> `<span>${v}<br></span>`);
+              if(prefLang !== "unknown") document.querySelector('#knownLangs').innerText = prefLang;
+              if(isJavaEnabled) document.querySelector('#isJavaEnabled').innerText = "true";
+              else document.querySelector('#isJavaEnabled').innerText = "false";
+          </script>
+          
+    </body>
+</html>
