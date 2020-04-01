@@ -14,7 +14,7 @@ Make it easier for developer to target different devices based on their configur
 
 ## Loading
 
-```bash
+```jsx
     <script src="./VanillaJavaScriptConfig.js"></script>
 ```
 
