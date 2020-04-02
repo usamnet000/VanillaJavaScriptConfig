@@ -55,7 +55,7 @@
               if(isOnLine) document.querySelector('#isOnLine').innerText = "true"; 
               else document.querySelector('#isOnLine').innerText = "false"; 
               if(knownLangs!=="unknown") document.querySelector('#knownLangs').innerHTML = knownLangs.map((v,i)=> `<span>${v}<br></span>`);
-              if(prefLang !== "unknown") document.querySelector('#knownLangs').innerText = prefLang;
+              if(prefLang !== "unknown") document.querySelector('#prefLang').innerText = prefLang;
               if(isJavaEnabled) document.querySelector('#isJavaEnabled').innerText = "true";
               else document.querySelector('#isJavaEnabled').innerText = "false";
           </script>
